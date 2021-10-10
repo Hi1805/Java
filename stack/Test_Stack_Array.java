@@ -255,6 +255,9 @@ public class Test_Stack_Array {
 					case '^' :
 						result = Math.pow(op2, op1);
 						break;
+					case "%" :
+						result = op2 % op1;
+						break;
 				}
 			} catch (Exception e) {
 				System.out.println("Wrong Systax");

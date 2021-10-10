@@ -214,7 +214,8 @@ public class Test_Stack_Array {
 			String temp = ip.next();// gia tri cua tu dau tien 
 			boolean check = true;
 			if(precedence(temp.charAt(0)) == 5) {// neu la toan hang 
-				if(Character.isLetter(temp.charAt((temp.length() - 1)))) { //neu la chu 
+				boolean isLetter = Character.isLetter(temp.charAt((temp.length() - 1)));
+				if(isLetter) { //neu la chu 
 					if(arr.size() != 0 ) { 
 						for (int i = 0; i < arr.size(); i++) {
 							if(arr.get(i).getKey().equals(temp)) { // kiem tra xem chu do co ton tai hay chua
@@ -225,7 +226,7 @@ public class Test_Stack_Array {
 						}
 					}
 				}
-				if(check) {// neu chu chua co gia tri thi nhap gia tri cho no
+				if(isLetter && check) {// neu chu chua co gia tri thi nhap gia tri cho no
 					System.out.println("Nhap gia tri "+temp);
 					MyObject m1 = new MyObject(temp,kb.nextLine());// nhap gia tri 
 					temp = m1.getValue();
